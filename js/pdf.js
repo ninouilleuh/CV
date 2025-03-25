@@ -100,8 +100,6 @@ const printExperience = [
     }
 ];
 
-
-
 // Professional Summary Variations
 const fullSummary = `
 
@@ -223,30 +221,83 @@ const fullEducation = [
         ]
     }
 ];
-
-//xxx
 const compactEducation = [
     {
         degree: "Baccalaureat",
         field: "Mathematics and Informatics",
         institution: "High School Jacque-Brel, Paris",
         dates: "2019 - 2020",
-        relevantCourses: [
-            "IT", 
-            "Mathematics", 
-            "Programming"
-        ]
     }
 ];
-
-//xxx
 const printEducation = [
     {
         degree: "Baccalaureat",
         field: "Math & Informatics",
         institution: "Jacque-Brel HS",
-        dates: "2019 - 2020",
-        relevantCourses: ["IT", "Math"]
+    }
+];
+// Project Variations
+
+const fullProjects = [ //xxx
+    {
+        title: "EcoAI Platform",
+        description: "An AI-driven platform for real-time ecological monitoring and prediction",
+        tags: ["Machine Learning", "Sustainability", "Climate Tech"],
+        image: "https://plus.unsplash.com/premium_photo-1661368421663-13b2d8115241?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        githubLink: "https://github.com/ninapalomares/ecoai-platform",
+        projectLink: "https://ninapalomares.com/projects/ecoai-platform"
+    },
+    {
+        title: "GreenWeb Framework",
+        description: "Sustainable web development framework reducing digital carbon emissions",
+        tags: ["Web Development", "Sustainability", "Open Source"],
+        image: "airline.png",
+        githubLink: "https://github.com/ninapalomares/greenweb-framework",
+        projectLink: "https://ninapalomares.com/projects/greenweb-framework"
+    },
+    {
+        title: "ClimateSync",
+        description: "Machine learning model for precise climate change prediction and mitigation strategies",
+        tags: ["AI", "Climate Change", "Predictive Analytics"],
+        image: "restaurant.png",
+        githubLink: "https://github.com/ninapalomares/climatesync",
+        projectLink: "https://ninapalomares.com/projects/climatesync"
+    }
+];
+
+const compactProjects = [ //xxx
+    {
+        title: "EcoAI Platform",
+        description: "AI-driven ecological monitoring platform",
+        tags: ["AI", "Sustainability", "Climate Tech"],
+        image: "https://images.unsplash.com/photo-1581579186913-45ac24ed53d3?fit=crop&w=300&h=200"
+    },
+    {
+        title: "GreenWeb Framework",
+        description: "Sustainable web development framework",
+        tags: ["Web Dev", "Sustainability"],
+        image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?fit=crop&w=300&h=200"
+    },
+    {
+        title: "ClimateSync",
+        description: "Climate change prediction model",
+        tags: ["AI", "Climate", "Prediction"],
+        image: "restaurant.png"
+    }
+];
+
+const printProjects = [ //xxx
+    {
+        title: "EcoAI Platform",
+        description: "Ecological AI Monitoring Solution"
+    },
+    {
+        title: "GreenWeb Framework",
+        description: "Sustainable Web Development"
+    },
+    {
+        title: "ClimateSync",
+        description: "Climate Prediction Model"
     }
 ];
 
@@ -265,7 +316,167 @@ function downloadPDF(type) {
         const elem = content.querySelector(selector);
         if (elem) elem.remove();
     });
-    
+
+    // Handle Projects Variations
+
+    const projectsContainer = content.querySelector('.projects-grid');
+
+    if (projectsContainer) {
+
+        projectsContainer.innerHTML = ''; // Clear existing projects
+
+        
+
+        // Select appropriate projects data
+
+        let projectsToUse = fullProjects;
+
+        if (type === 'compact') {
+
+            projectsToUse = compactProjects;
+
+        } else if (type === 'print') {
+
+            projectsToUse = printProjects;
+
+        }
+
+        
+
+        projectsToUse.forEach(project => {
+
+            const projectElement = document.createElement('div');
+
+            projectElement.classList.add('project-card');
+
+            
+
+            // Full and Compact versions include images
+
+            if (type !== 'print' && project.image) {
+
+                const imageElement = document.createElement('img');
+
+                imageElement.src = project.image;
+
+                imageElement.alt = project.title;
+
+                projectElement.appendChild(imageElement);
+
+            }
+
+            
+
+            const detailsElement = document.createElement('div');
+
+            detailsElement.classList.add('project-details');
+
+            
+
+            // Title
+
+            const titleElement = document.createElement('h3');
+
+            titleElement.textContent = project.title;
+
+            detailsElement.appendChild(titleElement);
+
+            
+
+            // Description
+
+            const descriptionElement = document.createElement('p');
+
+            descriptionElement.textContent = project.description;
+
+            detailsElement.appendChild(descriptionElement);
+
+            
+
+            // Tags (for full and compact versions)
+
+            if (type !== 'print' && project.tags) {
+
+                const tagsContainer = document.createElement('div');
+
+                tagsContainer.classList.add('project-tags');
+
+                
+
+                project.tags.forEach(tag => {
+
+                    const tagElement = document.createElement('span');
+
+                    tagElement.textContent = tag;
+
+                    tagsContainer.appendChild(tagElement);
+
+                });
+
+                
+
+                detailsElement.appendChild(tagsContainer);
+
+            }
+
+            
+
+            // Links (only for full version with visual representation)
+
+            if (type === 'full' && (project.githubLink || project.projectLink)) {
+
+                const linksContainer = document.createElement('div');
+
+                linksContainer.classList.add('project-links');
+
+                
+
+                if (project.githubLink) {
+
+                    const githubLink = document.createElement('a');
+
+                    githubLink.href = project.githubLink;
+
+                    githubLink.textContent = 'GitHub';
+
+                    githubLink.setAttribute('data-href', project.githubLink);
+
+                    linksContainer.appendChild(githubLink);
+
+                }
+
+                
+
+                if (project.projectLink) {
+
+                    const projectLink = document.createElement('a');
+
+                    projectLink.href = project.projectLink;
+
+                    projectLink.textContent = 'Project Page';
+
+                    projectLink.setAttribute('data-href', project.projectLink);
+
+                    linksContainer.appendChild(projectLink);
+
+                }
+
+                
+
+                detailsElement.appendChild(linksContainer);
+
+            }
+
+            
+
+            projectElement.appendChild(detailsElement);
+
+            projectsContainer.appendChild(projectElement);
+
+        });
+
+    }
+
     // Handle Experience Variations
 
     const experienceContainer = content.querySelector('.experience-grid');
@@ -761,67 +972,102 @@ function downloadPDF(type) {
             margin-bottom: 0.2rem;
         }
 
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        .project-card {
+            border-bottom: 1px solid var(--color-gray-border);
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+
+        }
+
+        .project-card img {
+            max-width: 150px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+            margin-right: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            filter: grayscale(10%);
+        }
+        
+        .project-details {
+            flex-grow: 1;
+        }
+
+        .project-details h3 {
+            font-size: 1rem;
+            color: var(--color-accent);
+            margin-bottom: 0.3rem;
+            border-bottom: 1px solid var(--color-gray-border);
+            padding-bottom: 0.2rem;
+        }
+
+        .project-details p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tags {
+            display: none; /* Hide tags in print version */
+        }
+        .project-links {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            position: relative;
+            color: #666;
+            text-decoration: none;
+        }
+
+
+        .project-links a::after {
+            content: " [" attr(href) "]";
+            font-size: 0.7rem;
+            color: #999;
+        }
+
+
+        .project-links a::before {
+            content: "🔗";
+            margin-right: 0.3rem;
+            font-size: 0.7rem;
+        }
+
 `;
-
-    // Full CV - Comprehensive Professional Design
-    if (type === 'full') {
-        styleContent += `
-            .mission-statement, 
-            .future-vision {
-                background: var(--color-gray-light);
-                border-left: 4px solid var(--color-accent);
-                padding: 1rem;
-                margin-bottom: 1rem;
-                font-style: italic;
-            }
-
-            .code-snippet {
-                background: var(--color-gray-light);
-                font-family: 'Courier New', monospace;
-                padding: 0.75rem;
-                margin: 0.75rem 0;
-                font-size: 0.9rem;
-                white-space: pre-wrap;
-                border-left: 3px solid var(--color-accent);
-                overflow-x: auto;
-            }
-
-            .project-card img {
-                max-width: 100%;
-                height: 200px;
-                object-fit: cover;
-                margin-bottom: 0.75rem;
-                filter: grayscale(10%);
-                border-radius: 4px;
-            }
-
-            .project-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-top: 0.75rem;
-            }
-
-            .project-tags span {
-                background: var(--color-accent);
-                color: var(--color-text-on-accent);
-                padding: 0.25rem 0.5rem;
-                border-radius: 3px;
-                font-size: 0.7rem;
-            }
-        `;
-    } 
+    if (type === 'full') {}
     // Compact Version - Focused and Concise
     else if (type === 'compact') {
         styleContent += `
             .mission-statement, 
             .future-vision, 
             .ecosystem-grid, 
-            .code-snippet, 
-            .project-card img, 
+            .code-snippet,  
             .project-tags {
                 display: none;
             }
+            .project-card img {
+            width: 100%;
+            height: 80px;
+            margin-right: 0;
+            margin-bottom: 0.5rem;
+        }
+            .project-card {
+            flex-direction: column;
+        }
 
             .profile-section {
                 margin-bottom: 1rem;
@@ -844,7 +1090,57 @@ function downloadPDF(type) {
             }
         `;
     } 
-    
+
+    // Print Friendly - Minimal Essential Information
+    else {
+        styleContent += `
+            body {
+                font-size: 0.9rem;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 0.75rem;
+            }
+
+            .profile-image {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 0.5rem;
+                margin-right: 0;
+            }
+
+            .mission-statement, 
+            .future-vision, 
+            .ecosystem-grid, 
+            .code-snippet, 
+            .project-card img, 
+            .project-tags {
+                display: none;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+                border-bottom: 1px solid var(--color-primary);
+            }
+
+            h2 { font-size: 1.1rem; }
+            h3 { font-size: 1rem; }
+
+            .experience-card, 
+            .project-card {
+                margin-bottom: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+
+            ul {
+                margin-left: 1rem;
+                font-size: 0.8rem;
+            }
+        `;
+    }
+
     if (type === 'compact' || type === 'print') {
 
 styleContent += `
@@ -912,55 +1208,7 @@ styleContent += `
 `;
 
 }
-    // Print Friendly - Minimal Essential Information
-    else {
-        styleContent += `
-            body {
-                font-size: 0.9rem;
-            }
 
-            .profile-section {
-                flex-direction: column;
-                align-items: flex-start;
-                margin-bottom: 0.75rem;
-            }
-
-            .profile-image {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 0.5rem;
-                margin-right: 0;
-            }
-
-            .mission-statement, 
-            .future-vision, 
-            .ecosystem-grid, 
-            .code-snippet, 
-            .project-card img, 
-            .project-tags {
-                display: none;
-            }
-
-            h1 {
-                font-size: 1.3rem;
-                border-bottom: 1px solid var(--color-primary);
-            }
-
-            h2 { font-size: 1.1rem; }
-            h3 { font-size: 1rem; }
-
-            .experience-card, 
-            .project-card {
-                margin-bottom: 0.5rem;
-                padding-bottom: 0.5rem;
-            }
-
-            ul {
-                margin-left: 1rem;
-                font-size: 0.8rem;
-            }
-        `;
-    }
 
     // Advanced print window generation
     const printWindow = window.open('', 'PRINT', 'height=800,width=600');
