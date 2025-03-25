@@ -55,3 +55,47 @@ window.addEventListener('load', () => {
     
     console.groupEnd();
 });
+
+// Add touch and mobile-specific interactions
+document.addEventListener('DOMContentLoaded', () => {
+    // Prevent default touch behaviors
+    document.body.addEventListener('touchstart', function(e) {
+        // Prevent pinch-zoom
+        if (e.touches.length > 1) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // Add swipe navigation (optional)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.body.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.body.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left
+            console.log('Swiped left');
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right
+            console.log('Swiped right');
+        }
+    }
+
+    // Improve mobile menu interactions
+    const mobileMenuTrigger = document.querySelector('.mobile-menu-trigger');
+    if (mobileMenuTrigger) {
+        mobileMenuTrigger.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            // Toggle mobile menu
+        });
+    }
+});
