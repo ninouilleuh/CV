@@ -99,3 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    
+    ctaButtons.forEach(button => {
+        button.addEventListener('mouseenter', (e) => {
+            e.target.style.transform = 'translateY(-5px)';
+        });
+        
+        button.addEventListener('mouseleave', (e) => {
+            e.target.style.transform = 'translateY(0)';
+        });
+    });
+});

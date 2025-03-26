@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1000" height="1000"><style>
+    #light-icon {
+      display: inline;
+    }
+    #dark-icon {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #light-icon {
+        display: none;
+      }
+      #dark-icon {
+        display: inline;
+      }
+    }
+  </style><g id="light-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1000" height="1000"><g><g transform="matrix(10,0,0,10,0,0)" style="filter: contrast(1) brightness(1)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="100" height="100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Background Gradient -->
+    <defs>
+        <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#64ffda;stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:1"></stop>
+        </linearGradient>
+    </defs>
+
+    <!-- Geometric Shape Representing Network/Connectivity -->
+    <polygon points="50,10 90,35 90,65 50,90 10,65 10,35" fill="url(#techGradient)" stroke="#0a192f" stroke-width="3"></polygon>
+
+    <!-- Circuit-like Connections -->
+    <line x1="50" y1="35" x2="50" y2="65" stroke="#0a192f" stroke-width="2"></line>
+    <line x1="30" y1="45" x2="70" y2="55" stroke="#0a192f" stroke-width="2"></line>
+    <line x1="70" y1="45" x2="30" y2="55" stroke="#0a192f" stroke-width="2"></line>
+
+    <!-- Nodes/Connection Points -->
+    <circle cx="50" cy="35" r="4" fill="#0a192f"></circle>
+    <circle cx="50" cy="65" r="4" fill="#0a192f"></circle>
+    <circle cx="30" cy="45" r="3" fill="#0a192f"></circle>
+    <circle cx="70" cy="55" r="3" fill="#0a192f"></circle>
+</svg></svg></g></g></svg></g><g id="dark-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1000" height="1000"><g><g transform="matrix(10,0,0,10,0,0)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="100" height="100"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <linearGradient id="techNpGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#64ffda;stop-opacity:0.9"></stop>
+            <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:0.9"></stop>
+        </linearGradient>
+    </defs>
+
+    <!-- Circuitry Background -->
+    <rect x="10" y="10" width="80" height="80" fill="url(#techNpGradient)" rx="15" ry="15"></rect>
+
+    <!-- Circuit Lines -->
+    <path d="M20 30 H80 M20 50 H80 M20 70 H80" stroke="#0a192f" stroke-width="2" opacity="0.3"></path>
+
+    <!-- NP Monogram with Circuit-like Styling -->
+    <text x="50" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="50" fill="#0a192f" svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}">
+        NP
+    </text>
+</svg></svg></g></g></svg></g></svg>
