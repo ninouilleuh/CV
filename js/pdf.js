@@ -239,19 +239,19 @@ const printEducation = [
 // Project Variations
 
 const fullProjects = [ //xxx
-    {
-        title: "EcoAI Platform",
-        description: "An AI-driven platform for real-time ecological monitoring and prediction",
-        tags: ["Machine Learning", "Sustainability", "Climate Tech"],
-        image: "https://plus.unsplash.com/premium_photo-1661368421663-13b2d8115241?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        githubLink: "https://github.com/ninapalomares/ecoai-platform",
-        projectLink: "https://ninapalomares.com/projects/ecoai-platform"
-    },
+   // {
+   //     title: "EcoAI Platform",
+    //    description: "An AI-driven platform for real-time ecological monitoring and prediction",
+    //    tags: ["Machine Learning", "Sustainability", "Climate Tech"],
+     //   image: "https://plus.unsplash.com/premium_photo-1661368421663-13b2d8115241?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+     //   githubLink: "https://github.com/ninapalomares/ecoai-platform",
+    //    projectLink: "https://ninapalomares.com/projects/ecoai-platform"
+  //  },
     {
         title: "GreenWeb Framework",
         description: "Sustainable web development framework reducing digital carbon emissions",
         tags: ["Web Development", "Sustainability", "Open Source"],
-        image: "airline.png",
+        image: "assets/airline.png",
         githubLink: "https://github.com/ninapalomares/greenweb-framework",
         projectLink: "https://ninapalomares.com/projects/greenweb-framework"
     },
@@ -259,30 +259,30 @@ const fullProjects = [ //xxx
         title: "ClimateSync",
         description: "Machine learning model for precise climate change prediction and mitigation strategies",
         tags: ["AI", "Climate Change", "Predictive Analytics"],
-        image: "restaurant.png",
+        image: "assets/restaurant.png",
         githubLink: "https://github.com/ninapalomares/climatesync",
         projectLink: "https://ninapalomares.com/projects/climatesync"
     }
 ];
 
-const compactProjects = [ //xxx
+const compactProjects = [
+  //  {
+    //    title: "EcoAI Platform",
+      //  description: "AI-driven ecological monitoring platform",
+        //tags: ["AI", "Sustainability", "Climate Tech"],
+       // image: "https://images.unsplash.com/photo-1581579186913-45ac24ed53d3?fit=crop&w=300&h=200"
+   // },
     {
-        title: "EcoAI Platform",
-        description: "AI-driven ecological monitoring platform",
-        tags: ["AI", "Sustainability", "Climate Tech"],
-        image: "https://images.unsplash.com/photo-1581579186913-45ac24ed53d3?fit=crop&w=300&h=200"
+        title: "Skywing Airlines",
+        description: "Modern and user-friendly airline platform",
+        tags: ["Web Dev", "UI/UX"],
+        image: "assets/airline.png"
     },
     {
-        title: "GreenWeb Framework",
-        description: "Sustainable web development framework",
-        tags: ["Web Dev", "Sustainability"],
-        image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?fit=crop&w=300&h=200"
-    },
-    {
-        title: "ClimateSync",
-        description: "Climate change prediction model",
-        tags: ["AI", "Climate", "Prediction"],
-        image: "restaurant.png"
+        title: "La Cucina Bella",
+        description: "Website for an authentic Italian restaurant",
+        tags: ["Food", "Online Ordering", "Web Dev"],
+        image: "assets/restaurant.png"
     }
 ];
 

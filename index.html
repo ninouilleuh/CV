@@ -1,479 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="google-site-verification" content="pZnNDr68v_QX_CyejGarc_YnUsEspzMbSIiZ4mQ9IwA" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta charset="UTF-8">
-    <!-- optimisation -->
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- mobile manifest -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="manifest" href="manifest.json">  
-    <!-- Favicon Links -->
-    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="shortcut icon" href="assets/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Nina Tech" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <title>Eco-Tech Innovator | AI & Web Development</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
-    <link rel="stylesheet" href="css/chatbot.css?v=1.0">
-    <link rel="stylesheet" href="css/mobile.css?v=1.0">
-    <script src="js/script.js"></script>
-    <script src="js/chatbot.js"></script>
-    <script src="js/pdf.js"></script>
-    <style>
-        /* Critical CSS */
-        body {
-            font-family: 'Roboto Mono', monospace;
-            background: linear-gradient(135deg, #0a192f, #112240);
-            color: #e6f1ff;
-        }
-    </style>
-</head>
-<body>
-    <div class="holographic-overlay"></div>
-    <div class="container">
-        <div class="header">
-            <div class="profile-section">
-                <img src="assets/picture.jpg" 
-                     alt="Eco-Tech Innovator" 
-                     class="profile-image">
-                <div style="margin-left: 30px;">
-                    <h1 style="font-family: 'Orbitron', sans-serif; font-size: 2.5em;">Nina Palomares</h1>
-                    <h2 style="color: var(--accent-green);">Ecological AI & Web Architect</h2>
-                    <p>Bridging technology and sustainability through innovative digital solutions</p>
-                </div>
-                <div class="contact-information">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:palomaresnina3@gmail.com">palomaresnina3@gmail.com</a>
+    <head>
+        <title>Eco-Tech Innovator | AI & Web Development</title>
+        <!--Meta -->
+        <meta name="google-site-verification" content="pZnNDr68v_QX_CyejGarc_YnUsEspzMbSIiZ4mQ9IwA" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta charset="UTF-8">
+        <!-- mobile manifest -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="manifest" href="manifest.json">  
+        <!-- optimisation -->
+        <link rel="preload" href="styles.css" as="style">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Favicon Links -->
+        <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+        <link rel="shortcut icon" href="assets/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Nina Tech" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <!-- styles -->
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="css/styles.css?v=1.0">
+        <link rel="stylesheet" href="css/chatbot.css?v=1.0">
+        <link rel="stylesheet" href="css/mobile.css?v=1.0">
+        <style>
+            /* Critical CSS */
+            body {
+                font-family: 'Roboto Mono', monospace;
+                background: linear-gradient(135deg, #0a192f, #112240);
+                color: #e6f1ff;
+            }
+        </style>
+        <!--Javascript -->
+        <script src="js/script.js"></script>
+        <script src="js/chatbot.js"></script>
+        <script src="js/pdf.js"></script>
+    </head>
+    <body>
+        <div class="holographic-overlay"></div>
+        <div class="container">
+            <div class="header">
+                <div class="profile-section" id="about">
+                    <img src="assets/picture.jpg" 
+                        alt="Eco-Tech Innovator" 
+                        class="profile-image">
+                    <div style="margin-left: 30px;">
+                        <h1 style="font-family: 'Orbitron', sans-serif; font-size: 2.5em;">Nina Palomares</h1>
+                        <h2 style="color: var(--accent-green);">Ecological AI & Web Architect</h2>
+                        <p>Bridging technology and sustainability through innovative digital solutions</p>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/nina-palomares" target="_blank">LinkedIn Profile</a>
+                    <div class="contact-information">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:palomaresnina3@gmail.com">palomaresnina3@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/nina-palomares" target="_blank">LinkedIn Profile</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/ninouilleuh" target="_blank">GitHub</a>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/ninouilleuh" target="_blank">GitHub</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <a href="none" target="_blank">Personal Portfolio</a>
-                    </div>
-                </div>
-                <div class="download-cv-section">
-                    <div class="download-dropdown">
-                        <button onclick="toggleDownloadOptions(event)" class="download-cv-btn">
-                            📄 Download CV
-                        </button>
-                        <div id="downloadOptions" class="download-options">
-                            <button onclick="downloadPDF('full')">Full CV</button>
-                            <button onclick="downloadPDF('compact')">Compact Version</button>
-                            <button onclick="downloadPDF('print')">Print-Friendly</button>
+                    <div class="download-cv-section">
+                        <div class="download-dropdown">
+                            <button onclick="toggleDownloadOptions(event)" class="download-cv-btn">
+                                📄 Download CV
+                            </button>
+                            <div id="downloadOptions" class="download-options">
+                                <button onclick="downloadPDF('full')">Full CV</button>
+                                <button onclick="downloadPDF('compact')">Compact Version</button>
+                                <button onclick="downloadPDF('print')">Print-Friendly</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="professional-summary">
-            <h2>Professional Summary</h2>
-            <p>Innovative Ecological AI & Web Architect with a passion for developing sustainable technological solutions. Combining expertise in artificial intelligence, web development, and environmental science to create regenerative digital ecosystems. Committed to leveraging technology as a powerful tool for ecological restoration and sustainable innovation. Seeking opportunities to apply advanced technical skills and ecological insights to address global environmental challenges.</p>
-        </div>
-        <div class="skills-section">
-            <h2>Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>Python</li>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>SQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-
-                    <h3>Web Development</h3>
-        
-                    <ul>
-        
-                        <li>Front-end Development</li>
-                        <li>React.js</li>
-                        <li>Vue.js</li>
-                        <li>Web Design</li>
-                        <li>Responsive Design</li>
-                        <li>User Experience (UX)</li>
-                        <li>User Interface (UI)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
-                    <ul>
-                        <li>TensorFlow</li>
-                        <li>PyTorch</li>
-                        <li>Machine Learning</li>
-                        <li>Natural Language Processing</li>
-                        <li>Data Analysis</li>
-                        <li>Predictive Modeling</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-
-                    <h3>Performance & Optimization</h3>
-        
-                    <ul>
-        
-                        <li>Web Performance</li>
-        
-                        <li>Code Optimization</li>
-        
-                        <li>Scalability</li>
-        
-                        <li>Responsive Optimization</li>
-        
-                        <li>Cross-browser Compatibility</li>
-        
-                        <li>Performance Metrics</li>
-        
-                    </ul>
-        
-                </div>
-        
-                <div class="skill-category">
-        
-                    <h3>Tools & Platforms</h3>
-        
-                    <ul>
-        
-                        <li>Git/GitHub</li>
-        
-                        <li>Docker</li>
-        
-                        <li>AWS</li>
-        
-                        <li>Webpack</li>
-        
-                        <li>Babel</li>
-        
-                        <li>CI/CD</li>
-        
-                    </ul>
-        
-                </div>
-        
-                <div class="skill-category">
-        
-                    <h3>Soft Skills</h3>
-        
-                    <ul>
-        
-                        <li>Collaboration</li>
-        
-                        <li>Team Building</li>
-        
-                        <li>Social Impact</li>
-        
-                        <li>Problem Solving</li>
-        
-                        <li>Adaptability</li>
-        
-                        <li>Intuitive Thinking</li>
-        
-                        <li>Ambitious</li>
-        
-                        <li>Creative Communication</li>
-        
-                    </ul>
-        
-                </div>
+            <div class="professional-summary">
+                <h2>Professional Summary</h2>
+                <p>Innovative Ecological AI & Web Architect with a passion for developing sustainable technological solutions. Combining expertise in artificial intelligence, web development, and environmental science to create regenerative digital ecosystems. Committed to leveraging technology as a powerful tool for ecological restoration and sustainable innovation. Seeking opportunities to apply advanced technical skills and ecological insights to address global environmental challenges.</p>
             </div>
-        </div>
-        <div class="education-section">
-            <h2>Education</h2>
-            <div class="education-grid">
-                <div class="education-card">
-
-                    <h3>Baccalaureat in Mathematics and Informatics</h3>
-        
-                    <p class="education-institution">High School Jacque-Brel, Paris</p>
-        
-                    <p class="education-dates">2019 - 2020</p>
-        
-                    <div class="relevant-courses">
-        
-                        <h4>Relevant Courses</h4>
-        
+            <div class="skills-section" id="skills">
+                <h2>Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
                         <ul>
-        
-                            <li>Information Technology</li>
-        
-                            <li>Advanced Mathematics</li>
-        
-                            <li>Computer Science Fundamentals</li>
-        
-                            <li>Programming Basics</li>
-        
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                            <li>Python</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>SQL</li>
                         </ul>
-        
                     </div>
-        
+                    <div class="skill-category">
+
+                        <h3>Web Development</h3>
+            
+                        <ul>
+            
+                            <li>Front-end Development</li>
+                            <li>React.js</li>
+                            <li>Vue.js</li>
+                            <li>Web Design</li>
+                            <li>Responsive Design</li>
+                            <li>User Experience (UX)</li>
+                            <li>User Interface (UI)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI & Machine Learning</h3>
+                        <ul>
+                            <li>TensorFlow</li>
+                            <li>PyTorch</li>
+                            <li>Machine Learning</li>
+                            <li>Natural Language Processing</li>
+                            <li>Data Analysis</li>
+                            <li>Predictive Modeling</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+
+                        <h3>Performance & Optimization</h3>
+            
+                        <ul>
+            
+                            <li>Web Performance</li>
+            
+                            <li>Code Optimization</li>
+            
+                            <li>Scalability</li>
+            
+                            <li>Responsive Optimization</li>
+            
+                            <li>Cross-browser Compatibility</li>
+            
+                            <li>Performance Metrics</li>
+            
+                        </ul>
+            
+                    </div>
+            
+                    <div class="skill-category">
+            
+                        <h3>Tools & Platforms</h3>
+            
+                        <ul>
+            
+                            <li>Git/GitHub</li>
+            
+                            <li>Docker</li>
+            
+                            <li>AWS</li>
+            
+                            <li>Webpack</li>
+            
+                            <li>Babel</li>
+            
+                            <li>CI/CD</li>
+            
+                        </ul>
+            
+                    </div>
+            
+                    <div class="skill-category">
+            
+                        <h3>Soft Skills</h3>
+            
+                        <ul>
+            
+                            <li>Collaboration</li>
+            
+                            <li>Team Building</li>
+            
+                            <li>Social Impact</li>
+            
+                            <li>Problem Solving</li>
+            
+                            <li>Adaptability</li>
+            
+                            <li>Intuitive Thinking</li>
+            
+                            <li>Ambitious</li>
+            
+                            <li>Creative Communication</li>
+            
+                        </ul>
+            
+                    </div>
                 </div>
-                <div class="education-card">
-                    <h3>Continuous Learning Pathway</h3>
-                    <p class="education-institution">Online Platforms | Ongoing</p>
-                    <ul>
-                        <li>Udacity Nanodegree in AI and Machine Learning</li>
-                        <li>FreeCodeCamp Web Development Certifications</li>
-                        <li>Coursera Specializations in Ecological Technologies</li>
-                    </ul>
+            </div>
+            <div class="education-section">
+                <h2>Education</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+
+                        <h3>Baccalaureat in Mathematics and Informatics</h3>
+            
+                        <p class="education-institution">High School Jacque-Brel, Paris</p>
+            
+                        <p class="education-dates">2019 - 2020</p>
+            
+                        <div class="relevant-courses">
+            
+                            <h4>Relevant Courses</h4>
+            
+                            <ul>
+            
+                                <li>Information Technology</li>
+            
+                                <li>Advanced Mathematics</li>
+            
+                                <li>Computer Science Fundamentals</li>
+            
+                                <li>Programming Basics</li>
+            
+                            </ul>
+            
+                        </div>
+            
+                    </div>
+                    <div class="education-card">
+                        <h3>Continuous Learning Pathway</h3>
+                        <p class="education-institution">Online Platforms | Ongoing</p>
+                        <ul>
+                            <li>Udacity Nanodegree in AI and Machine Learning</li>
+                            <li>FreeCodeCamp Web Development Certifications</li>
+                            <li>Coursera Specializations in Ecological Technologies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mission-statement">
+                <h2>Mission: Regenerative Digital Ecosystems</h2>
+                <p>Developing technologies that not only minimize environmental impact but actively contribute to ecological restoration and sustainable future.</p>
+            </div>
+            <div class="ecosystem-grid">
+                <div class="ecosystem-card">
+                    <h3>AI-Driven Ecological Modeling</h3>
+                    <div class="code-snippet">
+                        class EcosystemAI extends NeuralNetwork {<br>
+                        &nbsp;&nbsp;predict(environmentalData) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return regenerativeSolutions;<br>
+                        &nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;optimize(impact) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return sustainableFuture;<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+                </div>
+
+                <div class="ecosystem-card">
+                    <h3>Sustainable Web Architecture</h3>
+                    <div class="code-snippet">
+                        function buildGreenWebApp(design) {<br>
+                        &nbsp;&nbsp;return optimize(design, {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;energyEfficiency: 'max',<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;carbonFootprint: 'minimal'<br>
+                        &nbsp;&nbsp;});<br>
+                        }
+                    </div>
+                </div>
+
+                <div class="ecosystem-card">
+                    <h3>Regenerative Technology</h3>
+                    <div class="code-snippet">
+                        const futureInnovation = {<br>
+                        &nbsp;&nbsp;goal: 'Planetary Healing',<br>
+                        &nbsp;&nbsp;approach: 'Symbiotic Technology',<br>
+                        &nbsp;&nbsp;method: (technology, nature) => {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return harmonize(technology, nature);<br>
+                        &nbsp;&nbsp;}<br>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="experience-section" id="experience">
+                <h2>Professional Experience</h2>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <h3>Freelance Specialist</h3>
+                        <p class="experience-details">
+
+                            <span class="company">Outlier</span> | 
+
+                            <span class="date">11/2024 - Present</span>
+
+                        </p> 
+                        <ul>
+                            <li>Provided specialized services in tech and data management</li>
+                            <li>Contributed to AI and ecological research initiatives</li>
+                            <li>Gained hands-on experience in digital ecosystems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <h3>Freelance Specialist</h3>
+                        <p class="experience-details">
+
+                            <span class="company">Innodata</span> | 
+
+                            <span class="date">02/2025 - 03/2025</span>
+
+                        </p>  
+                        <ul>
+                            <li>Worked on data-centric projects with a focus on accuracy and efficiency</li>
+                            <li>Gained valuable short-term project management experience</li>
+                            <li>Contributed to AI and sustainability research tasks</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <h3>Technology & Game Development Student</h3>
+                        <p class="experience-details">
+
+                            <span class="company">Self-Study</span> | 
+
+                            <span class="date">09/2019 - 06/2024</span>
+
+                        </p>
+                        <ul>
+                            <li>Studied video game development, programming, and tech systems</li>
+                            <li>Built projects that combined tech, creativity, and problem-solving</li>
+                            <li>Gained valuable skills and knowledge through hands-on learning</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <h3>AI & Ecology Enthusiast</h3>
+                        <p class="experience-details">
+
+                            <span class="company">Personal Projects</span> | 
+
+                            <span class="date">01/2022 - Present</span>
+
+                        </p> 
+                        <ul>
+                            <li>Exploring AI applications in sustainability and ecology</li>
+                            <li>Working on personal and freelance projects to merge tech with nature</li>
+                            <li>Continuously studying advancements in green tech</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="projects-section" id="projects">
+                <h2>Innovative Projects</h2>
+                <div class="projects-grid"> 
+                <!-- project too early. will add later. xxx
+                    <div class="project-card" data-link="https://ninouilleuh.github.io/ecoai-platform/">
+                        <img src="https://plus.unsplash.com/premium_photo-1661368421663-13b2d8115241?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                            alt="Ecological AI Platform">
+                        <div class="project-details">
+                            <h3>EcoAI Platform</h3>
+                            <p>An AI-driven platform for real-time ecological monitoring and prediction</p>
+                            <div class="project-tags">
+                                <span>Machine Learning</span>
+                                <span>Sustainability</span>
+                                <span>Climate Tech</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ninouilleuh/ecoai-platform" target="_blank" class="github-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://ninouilleuh.github.io/ecoai-platform/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                -->
+                    <div class="project-card" data-link="https://ninouilleuh.github.io/Airline/">
+                        <img src="assets/airline.png" 
+                            alt="AirLine Website">
+                        <div class="project-details">
+                            <h3>Skywing Airlines</h3>
+                            <p>A modern and user-friendly airline booking platform with real-time flight tracking and seamless ticket reservations.</p>
+                            <div class="project-tags">
+                                <span>Web Development</span>
+                                <span>UI/UX Design</span>
+                                <span>Booking System</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ninouilleuh/Airline" target="_blank" class="github-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://ninouilleuh.github.io/Airline/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-link="https://ninouilleuh.github.io/restaurant/">
+                        <img src="assets/restaurant.png" alt="Italian Restaurant Website">
+                        <div class="project-details">
+                            <h3>La Cucina Bella</h3>
+                            <p>A beautifully designed website for an authentic Italian restaurant, featuring an interactive menu, online reservations, and customer reviews.</p>
+                            <div class="project-tags">
+                                <span>Web Development</span>
+                                <span>Food & Beverage</span>
+                                <span>Online Ordering</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ninouilleuh/restaurant" target="_blank" class="github-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://ninouilleuh.github.io/restaurant/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="future-vision">
+                <div class="future-vision-content">
+                    <h2>Future Vision: Technological Symbiosis</h2>
+                    <p>Creating a holistic approach where technology becomes a regenerative force, working in harmony with natural ecosystems to solve global challenges.</p>
+                </div>
+                <div class="cta-section">
+                    <h3>Let's Build the Future Together</h3>
+                    <div class="cta-buttons">
+                        <a href="mailto:palomaresnina3@gmail.com" class="cta-button email-cta">
+                            <i class="fas fa-envelope"></i> Get in Touch
+                        </a>
+                        <a href="https://www.linkedin.com/in/nina-palomares" target="_blank" class="cta-button linkedin-cta">
+                            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-interaction" onclick="openChatModal()">
+                Future AI Assistant
+            </div>  
+            <div class="chat-modal" id="chatModal">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h3>Future AI Assistant</h3>
+                        <button onclick="closeChatModal()" style="background:none; color:var(--bg-dark); border:none; font-size:20px;">&times;</button>
+                    </div>
+                    <div class="chat-messages" id="chatMessages"></div>
+                    <div class="faq-buttons" id="faqButtons">
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="userInput" placeholder="Type your message...">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="mission-statement">
-            <h2>Mission: Regenerative Digital Ecosystems</h2>
-            <p>Developing technologies that not only minimize environmental impact but actively contribute to ecological restoration and sustainable future.</p>
-        </div>
-
-        <div class="ecosystem-grid">
-            <div class="ecosystem-card">
-                <h3>AI-Driven Ecological Modeling</h3>
-                <div class="code-snippet">
-                    class EcosystemAI extends NeuralNetwork {<br>
-                    &nbsp;&nbsp;predict(environmentalData) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;return regenerativeSolutions;<br>
-                    &nbsp;&nbsp;}<br>
-                    &nbsp;&nbsp;optimize(impact) {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;return sustainableFuture;<br>
-                    &nbsp;&nbsp;}<br>
-                    }
-                </div>
-            </div>
-
-            <div class="ecosystem-card">
-                <h3>Sustainable Web Architecture</h3>
-                <div class="code-snippet">
-                    function buildGreenWebApp(design) {<br>
-                    &nbsp;&nbsp;return optimize(design, {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;energyEfficiency: 'max',<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;carbonFootprint: 'minimal'<br>
-                    &nbsp;&nbsp;});<br>
-                    }
-                </div>
-            </div>
-
-            <div class="ecosystem-card">
-                <h3>Regenerative Technology</h3>
-                <div class="code-snippet">
-                    const futureInnovation = {<br>
-                    &nbsp;&nbsp;goal: 'Planetary Healing',<br>
-                    &nbsp;&nbsp;approach: 'Symbiotic Technology',<br>
-                    &nbsp;&nbsp;method: (technology, nature) => {<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;return harmonize(technology, nature);<br>
-                    &nbsp;&nbsp;}<br>
-                    }
-                </div>
+        <div class="loading-overlay" id="loadingOverlay">
+            <div>
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Generating PDF...</div>
             </div>
         </div>
-<div class="experience-section">
-    <h2>Professional Experience</h2>
-    <div class="experience-grid">
-        <div class="experience-card">
-            <h3>Freelance Specialist</h3>
-            <p class="experience-details">
-
-                <span class="company">Outlier</span> | 
-
-                <span class="date">11/2024 - Present</span>
-
-            </p> 
-            <ul>
-                <li>Provided specialized services in tech and data management</li>
-                <li>Contributed to AI and ecological research initiatives</li>
-                <li>Gained hands-on experience in digital ecosystems</li>
-            </ul>
-        </div>
-        
-        <div class="experience-card">
-            <h3>Freelance Specialist</h3>
-            <p class="experience-details">
-
-                <span class="company">Innodata</span> | 
-
-                <span class="date">02/2025 - 03/2025</span>
-
-            </p>  
-            <ul>
-                <li>Worked on data-centric projects with a focus on accuracy and efficiency</li>
-                <li>Gained valuable short-term project management experience</li>
-                <li>Contributed to AI and sustainability research tasks</li>
-            </ul>
-        </div>
-        
-        <div class="experience-card">
-            <h3>Technology & Game Development Student</h3>
-            <p class="experience-details">
-
-                <span class="company">Self-Study</span> | 
-
-                <span class="date">09/2019 - 06/2024</span>
-
-            </p>
-            <ul>
-                <li>Studied video game development, programming, and tech systems</li>
-                <li>Built projects that combined tech, creativity, and problem-solving</li>
-                <li>Gained valuable skills and knowledge through hands-on learning</li>
-            </ul>
-        </div>
-        
-        <div class="experience-card">
-            <h3>AI & Ecology Enthusiast</h3>
-            <p class="experience-details">
-
-                <span class="company">Personal Projects</span> | 
-
-                <span class="date">01/2022 - Present</span>
-
-            </p> 
-            <ul>
-                <li>Exploring AI applications in sustainability and ecology</li>
-                <li>Working on personal and freelance projects to merge tech with nature</li>
-                <li>Continuously studying advancements in green tech</li>
-            </ul>
-        </div>
-
-    </div>
-</div>
-
-<div class="projects-section">
-    <h2>Innovative Projects</h2>
-    <div class="projects-grid"> 
-        <div class="project-card" data-link="https://ninouilleuh.github.io/ecoai-platform/">
-            <img src="https://plus.unsplash.com/premium_photo-1661368421663-13b2d8115241?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                 alt="Ecological AI Platform">
-            <div class="project-details">
-                <h3>EcoAI Platform</h3>
-                <p>An AI-driven platform for real-time ecological monitoring and prediction</p>
-                <div class="project-tags">
-                    <span>Machine Learning</span>
-                    <span>Sustainability</span>
-                    <span>Climate Tech</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/ninouilleuh/ecoai-platform" target="_blank" class="github-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://ninouilleuh.github.io/ecoai-platform/" target="_blank" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> View Project
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card" data-link="https://ninouilleuh.github.io/Airline/">
-            <img src="assets/airline.png" 
-                 alt="AirLine Website">
-            <div class="project-details">
-                <h3>Skywing Airlines</h3>
-                <p>A modern and user-friendly airline booking platform with real-time flight tracking and seamless ticket reservations.</p>
-                <div class="project-tags">
-                    <span>Web Development</span>
-                    <span>UI/UX Design</span>
-                    <span>Booking System</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/ninouilleuh/Airline" target="_blank" class="github-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://ninouilleuh.github.io/Airline/" target="_blank" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> View Project
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="project-card" data-link="https://ninouilleuh.github.io/restaurant/">
-            <img src="assets/restaurant.png" alt="Italian Restaurant Website">
-            <div class="project-details">
-                <h3>La Cucina Bella</h3>
-                <p>A beautifully designed website for an authentic Italian restaurant, featuring an interactive menu, online reservations, and customer reviews.</p>
-                <div class="project-tags">
-                    <span>Web Development</span>
-                    <span>Food & Beverage</span>
-                    <span>Online Ordering</span>
-                </div>
-            </div>
-            <div class="project-links">
-                <a href="https://github.com/ninouilleuh/restaurant" target="_blank" class="github-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://ninouilleuh.github.io/restaurant/" target="_blank" class="project-link">
-                    <i class="fas fa-external-link-alt"></i> View Project
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-        <div class="future-vision">
-            <div class="future-vision-content">
-                <h2>Future Vision: Technological Symbiosis</h2>
-                <p>Creating a holistic approach where technology becomes a regenerative force, working in harmony with natural ecosystems to solve global challenges.</p>
-            </div>
-            <div class="cta-section">
-                <h3>Let's Build the Future Together</h3>
-                <div class="cta-buttons">
-                    <a href="mailto:palomaresnina3@gmail.com" class="cta-button email-cta">
-                        <i class="fas fa-envelope"></i> Get in Touch
-                    </a>
-                    <a href="https://www.linkedin.com/in/nina-palomares" target="_blank" class="cta-button linkedin-cta">
-                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    
-        <div class="ai-interaction" onclick="openChatModal()">
-            Future AI Assistant
-    </div>
-<div class="chat-modal" id="chatModal">
-    <div class="chat-container">
-        <div class="chat-header">
-            <h3>Future AI Assistant</h3>
-            <button onclick="closeChatModal()" style="background:none; color:var(--bg-dark); border:none; font-size:20px;">&times;</button>
-        </div>
-        <div class="chat-messages" id="chatMessages"></div>
-        <div class="faq-buttons" id="faqButtons">
-        </div>
-        <div class="chat-input">
-            <input type="text" id="userInput" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-</div>
-
-</div>
-
-<div class="loading-overlay" id="loadingOverlay">
-
-    <div>
-
-        <div class="loading-spinner"></div>
-
-        <div class="loading-text">Generating PDF...</div>
-
-    </div>
-
-</div>
-
-</body>
+    </body>
 </html>

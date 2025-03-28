@@ -1,3 +1,4 @@
+///project links
 document.addEventListener('DOMContentLoaded', () => {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
+//CSS check
 window.addEventListener('load', () => {
     console.group('Style Debugging');
     
@@ -52,7 +53,6 @@ window.addEventListener('load', () => {
             console.error('Cannot access stylesheet rules');
         }
     }
-    
     console.groupEnd();
 });
 
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
+//CTA 
 document.addEventListener('DOMContentLoaded', () => {
     const ctaButtons = document.querySelectorAll('.cta-button');
     
@@ -110,6 +110,43 @@ document.addEventListener('DOMContentLoaded', () => {
         
         button.addEventListener('mouseleave', (e) => {
             e.target.style.transform = 'translateY(0)';
+        });
+    });
+});
+//mobile touch optimisation
+document.addEventListener('DOMContentLoaded', () => {
+    const contactItems = document.querySelectorAll('.contact-item');
+
+    contactItems.forEach(item => {
+        const link = item.querySelector('a');
+        
+        // Add touch feedback
+        item.addEventListener('touchstart', () => {
+            item.style.transform = 'scale(0.98)';
+        });
+
+        item.addEventListener('touchend', () => {
+            item.style.transform = 'scale(1)';
+        });
+
+        // Copy to clipboard functionality
+        link.addEventListener('click', (e) => {
+            const textToCopy = link.querySelector('span').textContent;
+            
+            // Create a temporary textarea to copy text
+            const tempInput = document.createElement('textarea');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Optional: Show copied feedback
+            const originalText = link.textContent;
+            link.textContent = 'Copied!';
+            setTimeout(() => {
+                link.textContent = originalText;
+            }, 1500);
         });
     });
 });
