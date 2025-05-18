@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!-- Fun animated background and playful emoji header added! -->
+<script>
+    // Animated background bubbles
+    document.addEventListener('DOMContentLoaded', () => {
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.pointerEvents = 'none';
+        overlay.style.zIndex = 0;
+        overlay.style.overflow = 'hidden';
+        overlay.className = 'bubble-bg';
+        document.body.prepend(overlay);
+
+        for (let i = 0; i < 18; i++) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.left = Math.random() * 100 + 'vw';
+            bubble.style.animationDuration = (6 + Math.random() * 6) + 's';
+            bubble.style.opacity = 0.18 + Math.random() * 0.18;
+            bubble.style.width = bubble.style.height = (18 + Math.random() * 32) + 'px';
+            overlay.appendChild(bubble);
+        }
+    });
+</script>
+<style>
+.bubble-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.bubble {
+    position: absolute;
+    bottom: -60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #a8e063cc 60%, #56ab2f99 100%);
+    animation: floatUp linear infinite;
+    filter: blur(1.5px);
+}
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) scale(1.2) rotate(360deg);
+    }
+}
+main.container {
+    position: relative;
+    z-index: 1;
+}
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+    nav {
+        background: linear-gradient(90deg, #a8e063 0%, #56ab2f 100%);
+        padding: 1.1em 0;
+        box-shadow: 0 2px 16px 0 #a8e06333, 0 1.5px 6px rgba(0,0,0,0.10);
+        position: relative;
+        overflow: visible;
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 2.5em;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+    }
+    nav li {
+        position: relative;
+        transition: transform 0.18s cubic-bezier(.25,.8,.25,1);
+        /* Idle animation */
+        animation: navIdle 3.5s ease-in-out infinite alternate;
+    }
+    nav li:hover {
+        transform: translateY(-4px) scale(1.08) rotateZ(-2deg);
+        z-index: 2;
+        animation-play-state: paused;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        font-size: 1.13em;
+        padding: 0.5em 1.2em;
+        border-radius: 22px;
+        background: linear-gradient(90deg, #56ab2f33 0%, #a8e06322 100%);
+        box-shadow: 0 2px 8px #56ab2f22;
+        transition: 
+            color 0.2s,
+            background 0.22s,
+            box-shadow 0.22s;
+        position: relative;
+        overflow: hidden;
+    }
+    nav a::before {
+        content: '';
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        width: 180%;
+        height: 180%;
+        background: radial-gradient(circle, #ffe08288 0%, #a8e06300 80%);
+        opacity: 0.5;
+        border-radius: 50%;
+        z-index: 0;
+        transition: transform 0.35s cubic-bezier(.25,.8,.25,1);
+    }
+    nav a:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    nav a:hover {
+        color: #156064;
+        background: linear-gradient(90deg, #ffe082 0%, #a8e063 100%);
+        box-shadow: 0 6px 18px #ffe08255, 0 2px 8px #56ab2f22;
+    }
+    nav a:active {
+        color: #fff;
+        background: #156064cc;
+    }
+    /* Add playful emoji icons */
+    nav li:nth-child(1) a::after {
+        content: " 🏠";
+        font-size: 1em;
+        margin-left: 0.3em;
+    }
+    nav li:nth-child(2) a::after {
+        content: " 💼";
+        font-size: 1em;
+        margin-left: 0.3em;
+    }
+    nav li:nth-child(3) a::after {
+        content: " ✉️";
+        font-size: 1em;
+        margin-left: 0.3em;
+    }
+    /* Idle animation keyframes */
+    @keyframes navIdle {
+        0%   { transform: translateY(0) scale(1) rotateZ(0deg);}
+        20%  { transform: translateY(-2px) scale(1.03) rotateZ(-1deg);}
+        40%  { transform: translateY(2px) scale(0.98) rotateZ(1deg);}
+        60%  { transform: translateY(-1.5px) scale(1.01) rotateZ(-0.5deg);}
+        80%  { transform: translateY(1.5px) scale(1.02) rotateZ(0.5deg);}
+        100% { transform: translateY(0) scale(1) rotateZ(0deg);}
+    }
+    @media (max-width: 600px) {
+        nav {
+            padding: 0.7em 0;
+            box-shadow: 0 2px 12px #a8e06333;
+            background: linear-gradient(90deg, #a8e063 60%, #56ab2f 100%);
+        }
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.1em;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        nav li {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            animation: none; /* Remove idle animation for clarity */
+        }
+        nav a {
+            display: block;
+            width: 90vw;
+            margin: 0 auto;
+            font-size: 1.18em;
+            padding: 0.7em 0;
+            border-radius: 18px;
+            background: linear-gradient(90deg, #56ab2f33 0%, #a8e06322 100%);
+            box-shadow: 0 1.5px 6px #56ab2f22;
+            margin-bottom: 0.2em;
+        }
+        nav a::before {
+            display: none;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="holographic-overlay"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <h1 style="
+            font-size: 2.7em;
+            text-align: center;
+            margin: 1.2em 0 0.5em 0;
+            font-family: 'Segoe UI', 'Arial Rounded MT Bold', Arial, sans-serif;
+            color: #156064;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #a8e063 30%, #56ab2f 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            filter: drop-shadow(0 2px 8px #a8e06344);
+            position: relative;
+        ">
+            <span style="font-size:1.1em; vertical-align:middle;">✨</span>
+            My Portfolio
+            <span style="font-size:1.1em; vertical-align:middle;">🚀</span>
+        </h1>
+        <p style="font-size:1.2em; text-align:center; margin-bottom:1.5em;">
+            🎉 Hey there! Dive in and explore my portfolio—where creativity meets code, and every project is a new adventure! 🚀✨
+        </p>
+        <section class="projects">
+            <div class="project-card">
+                <img src="projectimage.png" alt="Portfolio Website Screenshot" style="width:100%;border-radius:12px 12px 0 0;object-fit:cover;max-height:170px;min-height:120px;margin-bottom:0.7em;">
+                <h2>Portfolio Website</h2>
+                <p style="font-size:1em; margin-bottom:0.7em;">A personal portfolio website to showcase projects and skills. Built with HTML5, CSS3, and a touch of JavaScript for interactivity.</p>
+                <div class="project-tags" style="margin-bottom:0.7em;">
+                    <span>Frontend</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Responsive Design</span>
+                    <span>UI/UX</span>
+                    <span>Web Design</span>
+                    <span>Accessibility</span>
+                    <span>SEO</span>
+                </div>
+                <a href="portfolio.html" style="pointer-events: none; color: #ffe08299; text-decoration: none; cursor: default;" aria-current="page">You are here</a>
+            </div>
+            <div class="project-card" data-link="https://ninouilleuh.github.io/Airline/" onclick="window.open('https://ninouilleuh.github.io/Airline/', '_blank')" style="cursor:pointer;">
+                <img src="assets/airline.png" 
+                    alt="AirLine Website" style="width:100%;border-radius:12px 12px 0 0;object-fit:cover;max-height:170px;min-height:120px;margin-bottom:0.7em;">
+                <h2>Skywing Airlines</h2>
+                <p style="font-size:1em; margin-bottom:0.7em;">A modern and user-friendly airline booking platform with real-time flight tracking and seamless ticket reservations.</p>
+                <div class="project-tags" style="margin-bottom:0.7em;">
+                    <span>Frontend</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Responsive Design</span>
+                    <span>UI/UX</span>
+                </div>
+                <div class="project-links" style="position:absolute; bottom:1em; left:1em;">
+                    <a href="https://github.com/ninouilleuh/Airline" target="_blank" class="github-link" style="font-size:2.2em;">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="project-card" data-link="https://ninouilleuh.github.io/restaurant/" onclick="window.open('https://ninouilleuh.github.io/restaurant/', '_blank')" style="cursor:pointer;">
+                <img src="assets/restaurant.png" alt="Italian Restaurant Website" style="width:100%;border-radius:12px 12px 0 0;object-fit:cover;max-height:170px;min-height:120px;margin-bottom:0.7em;">
+                <h2>La Cucina Bella</h2>
+                <p style="font-size:1em; margin-bottom:0.7em;">A beautifully designed website for an authentic Italian restaurant, featuring an interactive menu, online reservations, and customer reviews.</p>
+                <div class="project-tags" style="margin-bottom:0.7em;">
+                    <span>Frontend</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Responsive Design</span>
+                    <span>UI/UX</span>
+                    <span>Web Design</span>
+                </div>
+                <div class="project-links" style="position:absolute; bottom:1em; left:1em;">
+                    <a href="https://github.com/ninouilleuh/restaurant" target="_blank" class="github-link" style="font-size:2.2em;">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <style>
+            .projects {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 2.5em;
+                justify-items: center;
+                align-items: stretch;
+                margin-top: 2em;
+                perspective: 800px;
+            }
+            .project-card {
+                background: linear-gradient(135deg, #156064 60%, #00c9a7 100%);
+                border-radius: 18px;
+                box-shadow: 0 8px 24px rgba(21,96,100,0.18), 0 1.5px 6px rgba(0,0,0,0.10);
+                padding: 1.2em 1em 1em 1em;
+                padding-bottom: 3.5em; /* Add more bottom padding to make space for the icon */
+                max-width: 320px;
+                min-height: 200px;
+                flex: 1 1 260px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                position: relative;
+                transition: transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s;
+                transform: rotateZ(calc(var(--random-rotate, 0deg)));
+                z-index: 1;
+            }
+            /* Add a fun tilt effect on hover */
+            .project-card:hover {
+                transform: scale(1.05) rotateZ(-2deg) translateY(-8px);
+                box-shadow: 0 16px 32px rgba(21,96,100,0.22), 0 4px 16px rgba(0,0,0,0.13);
+                z-index: 2;
+            }
+            /* Staggered card effect using nth-child */
+            .project-card:nth-child(4n+1) { --random-rotate: -3deg; top: 0.5em; }
+            .project-card:nth-child(4n+2) { --random-rotate: 2deg; top: 1.2em; }
+            .project-card:nth-child(4n+3) { --random-rotate: -1.5deg; top: 0.8em; }
+            .project-card:nth-child(4n+4) { --random-rotate: 3deg; top: 1.5em; }
+
+            .project-card h2 {
+                margin-top: 0;
+                font-size: 1.1em;
+                color: #a8e063;
+                letter-spacing: 0.5px;
+                margin-bottom: 0.4em;
+            }
+            .project-card p {
+                color: #fff;
+                font-size: 1em;
+                margin-bottom: 0.7em;
+            }
+            .project-tags {
+                font-size: 0.93em;
+                margin-bottom: 0.7em;
+                display: flex;
+                flex-wrap: wrap; /* Allow tags to wrap to the next line */
+                gap: 0.4em 0.6em; /* Optional: add some space between tags */
+            }
+            .project-card a {
+                margin-top: auto;
+                color: #ffe082;
+                text-decoration: underline;
+                font-weight: bold;
+                transition: color 0.2s;
+            }
+            .project-card a:hover {
+                color: #56ab2f;
+            }
+            .project-links a.github-link {
+                text-decoration: none !important;
+                color: #ffe082;
+            }
+            .project-links a.github-link:hover {
+                color: #56ab2f;
+            }
+            /* Responsive design for portfolio cards and layout */
+            @media (max-width: 900px) {
+                .projects {
+                    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                    gap: 1.5em;
+                }
+                .project-card {
+                    max-width: 98vw;
+                    min-width: 0;
+                    padding: 1em 0.5em 3.5em 0.5em;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .main.container, main.container {
+                    padding: 0 0.2em;
+                }
+                .projects {
+                    grid-template-columns: 1fr;
+                    gap: 1em;
+                    margin-top: 1em;
+                }
+                .project-card {
+                    max-width: 100vw;
+                    min-width: 0;
+                    padding: 0.7em 0.2em 3.5em 0.2em;
+                    font-size: 0.98em;
+                    border-radius: 28px 8px 28px 8px; /* playful corners */
+                    box-shadow: 0 6px 24px #00c9a755, 0 2px 8px #15606422;
+                    background: linear-gradient(120deg, #a8e063 60%, #56ab2f 100%);
+                    transform: rotateZ(-2deg) scale(1.01);
+                    transition: transform 0.18s, box-shadow 0.18s;
+                    position: relative;
+                    overflow: hidden;
+                    margin-bottom: 0.5em;
+                    animation: funCardBounce 1.2s cubic-bezier(.68,-0.55,.27,1.55) 1;
+                }
+                .project-card:hover {
+                    transform: scale(1.04) rotateZ(2deg);
+                    box-shadow: 0 12px 32px #a8e06355, 0 4px 16px #56ab2f33;
+                }
+                .project-card img {
+                    max-height: 120px !important;
+                    min-height: 70px !important;
+                    border-radius: 22px 6px 22px 6px;
+                    box-shadow: 0 2px 12px #fff7, 0 1px 4px #a8e06344;
+                    margin-bottom: 0.8em;
+                    transition: box-shadow 0.18s;
+                }
+                .project-card h2 {
+                    font-size: 1.08em;
+                    color: #fff;
+                    text-shadow: 0 2px 8px #15606444;
+                    margin-bottom: 0.3em;
+                    letter-spacing: 1px;
+                }
+                .project-tags {
+                    font-size: 0.98em;
+                    gap: 0.3em 0.4em;
+                    margin-bottom: 0.7em;
+                    justify-content: center;
+                    width: 100%;
+                }
+                .project-tags span {
+                    background: #fff8;
+                    color: #156064;
+                    border-radius: 12px;
+                    padding: 0.18em 0.7em;
+                    font-weight: 600;
+                    margin-bottom: 0.2em;
+                    box-shadow: 0 1px 4px #a8e06333;
+                    font-size: 0.98em;
+                    display: inline-block;
+                }
+                .project-links {
+                    bottom: 0.7em !important;
+                    left: 0.7em !important;
+                    z-index: 2;
+                }
+                .project-links a.github-link {
+                    background: #fff;
+                    border-radius: 50%;
+                    padding: 0.18em 0.32em;
+                    box-shadow: 0 2px 8px #a8e06344;
+                    color: #156064 !important;
+                    font-size: 2.3em !important;
+                    transition: background 0.18s, color 0.18s;
+                    display: inline-block;
+                }
+                .project-links a.github-link:hover {
+                    background: #ffe082;
+                    color: #56ab2f !important;
+                }
+                @keyframes funCardBounce {
+                    0% { transform: scale(0.95) rotateZ(-6deg);}
+                    60% { transform: scale(1.04) rotateZ(2deg);}
+                    100% { transform: scale(1.01) rotateZ(-2deg);}
+                }
+            }
+        </style>
+    </main>
+</body>
+</html>
