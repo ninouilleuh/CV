@@ -247,43 +247,42 @@ const fullProjects = [ //xxx
      //   githubLink: "https://github.com/ninapalomares/ecoai-platform",
     //    projectLink: "https://ninapalomares.com/projects/ecoai-platform"
   //  },
-    {
-        title: "GreenWeb Framework",
-        description: "Sustainable web development framework reducing digital carbon emissions",
-        tags: ["Web Development", "Sustainability", "Open Source"],
-        image: "assets/airline.png",
-        githubLink: "https://github.com/ninapalomares/greenweb-framework",
-        projectLink: "https://ninapalomares.com/projects/greenweb-framework"
-    },
-    {
-        title: "ClimateSync",
-        description: "Machine learning model for precise climate change prediction and mitigation strategies",
-        tags: ["AI", "Climate Change", "Predictive Analytics"],
-        image: "assets/restaurant.png",
-        githubLink: "https://github.com/ninapalomares/climatesync",
-        projectLink: "https://ninapalomares.com/projects/climatesync"
-    }
+//    {
+   //     title: "GreenWeb Framework",
+     //   description: "Sustainable web development framework reducing digital carbon emissions",
+       // tags: ["Web Development", "Sustainability", "Open Source"],
+//        image: "assets/airline.png",
+//        githubLink: "https://github.com/ninapalomares/greenweb-framework",
+//        projectLink: "https://ninapalomares.com/projects/greenweb-framework"
+//    },
+//    {
+//        title: "ClimateSync",
+//        description: "Machine learning model for precise climate change prediction and mitigation strategies",
+//        tags: ["AI", "Climate Change", "Predictive Analytics"],
+//        image: "assets/restaurant.png",
+//        githubLink: "https://github.com/ninapalomares/climatesync",
+//        projectLink: "https://ninapalomares.com/projects/climatesync"
+//    }
 ];
 
 const compactProjects = [
-  //  {
-    //    title: "EcoAI Platform",
-      //  description: "AI-driven ecological monitoring platform",
-        //tags: ["AI", "Sustainability", "Climate Tech"],
-       // image: "https://images.unsplash.com/photo-1581579186913-45ac24ed53d3?fit=crop&w=300&h=200"
-   // },
     {
-        title: "Skywing Airlines",
-        description: "Modern and user-friendly airline platform",
-        tags: ["Web Dev", "UI/UX"],
-        image: "assets/airline.png"
-    },
-    {
-        title: "La Cucina Bella",
-        description: "Website for an authentic Italian restaurant",
-        tags: ["Food", "Online Ordering", "Web Dev"],
-        image: "assets/restaurant.png"
+        title: "Moi!",
+        description: "Privacy-focused anonymous chat app",
+        tags: ["AI", "Privacy", "Chat", "Web App"]
     }
+    // {
+    //     title: "Skywing Airlines",
+    //     description: "Modern and user-friendly airline platform",
+    //     tags: ["Web Dev", "UI/UX"],
+    //     image: "assets/airline.png"
+    // },
+    // {
+    //     title: "La Cucina Bella",
+    //     description: "Website for an authentic Italian restaurant",
+    //     tags: ["Food", "Online Ordering", "Web Dev"],
+    //     image: "assets/restaurant.png"
+    // }
 ];
 
 const printProjects = [ //xxx
@@ -670,7 +669,32 @@ function downloadPDF(type) {
         professionalSummaryElement.textContent = summaryVariations[type] || fullSummary;
 
     }
+    
+    // Only show email in contact-information for compact CV
+if (type === 'compact') {
+    const contactInfo = content.querySelector('.contact-information');
+    if (contactInfo) {
+        // Remove all contact items except those containing "mailto:"
+        Array.from(contactInfo.querySelectorAll('.contact-item')).forEach(item => {
+            const link = item.querySelector('a');
+            if (!link || !link.href.startsWith('mailto:')) {
+                item.remove();
+            }
+        });
+         // Add phone number manually
+        const phoneItem = document.createElement('span');
+        phoneItem.className = 'contact-item';
+        phoneItem.innerHTML = `<i class="fas fa-phone"></i> <a href="tel:+33620358042">06 20 35 80 42</a>`;
+        contactInfo.appendChild(phoneItem);
 
+         // Add second phone number manually
+        const phoneItem2 = document.createElement('span');
+        phoneItem2.className = 'contact-item';
+        phoneItem2.innerHTML = `<i class="fas fa-phone"></i> <a href="tel:+358465559264">4 65 55 92 64</a>`;
+        contactInfo.appendChild(phoneItem2);
+   
+    }
+}
 
     // Advanced styling with multiple layers of optimization
     let styleContent = `
